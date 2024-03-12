@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XPECTED | HomePage</title>
+        <link rel="shortcut icon" href="src/imgs/5581171.png"
+            type="image/x-icon">
+        <!-- Font Awe Some -->
+        <!-- Add the slick-theme.css if you want default styling
+        <link rel="stylesheet" type="text/css"
+            href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+         Add the slick-theme.css if you want default styling -->
+        <!-- <link rel="stylesheet" type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+        <link rel="stylesheet" type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"> -->
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="src/v6.5.1/css/all.css">
+        <link rel="stylesheet" href="src/v6.5.1/css/sharp-light.css">
+        <link rel="stylesheet" href="src/v6.5.1/css/sharp-regular.css">
+        <link rel="stylesheet" href="src/v6.5.1/css/sharp-solid.css">
+        <!-- <link rel="stylesheet" href="src/v6.5.1/css/sharp-thin.css"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <!-- Main Files
+        <link rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+
+        <link rel="stylesheet" href="src/css/normalize.css">
+        <link rel="stylesheet" href="src/css/framework.css">
+        <link rel="stylesheet" href="src/css/styles.css">
+        <!-- ------------- -->
+
+    </head>
+    <body>
+        <section class="event bg-color-2">
+            <div class="container d-flex-center">
+                <p class="fs-14 lh-21 text-color fw-400 text-center">Summer Sale
+                    For All
+                    Swim Suits And Free Express Delivery - OFF 50%! <a href="#"
+                        class="fw-600 lh-24 text-color">ShopNow</a></p>
+                <p class="fs-14 lh-21 text-color fw-400 d-flex-center ">English
+                    <i
+                        class="fa-solid fa-angle-down"></i></p>
+            </div>
+        </section>
+        <section class="navbar" id="navbar">
+            <div class="wrapper d-flex justify-between align-center">
+                <div class="nav-logo">
+                    <a href="/"><h1
+                            class="fs-24 lh-24 black-color fw-700"
+                            style="letter-spacing: .72px;">XPECTED</h1>
+                    </a>
+                </div>
+                <div class="nav-links d-flex align-center gap-30 ">
+                    <a href="/" class="active">Home</a>
+                    <a href="/contact">Contact</a>
+                    <!-- <a href=".about/">About</a> -->
+                    <a href="/signup">Sign Up</a>
+                </div>
+                <div class="nav-last d-flex align-center gap-20">
+                    <div class="nav-search d-flex align-center justify-center
+                gap-5">
+                        <input type="text"
+                            placeholder="What are you looking for?">
+                        <i
+                            class="fa-solid fa-regular fa-magnifying-glass pointer"></i>
+                    </div>
+                    <div class="nav-icons d-flex gap-20">
+                        <!-- <i class="fa-sharp fa-solid fa-heart"></i> -->
+
+                        <a href="/cart" style="color:#000"><i
+                                class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                        <% if (loggedIn) { %>
+                        <div class="logged-wrapper" style="display: block;">
+                            <h3>My Account</h3>
+                            <div class="logged-mini">
+                                <a href="/logout">Logout</a>
+                                <div class="logged-info">
+                                    <div class="user-img">
+                                        <img src="src/imgs/user.png" alt>
+                                    </div>
+                                    <div class="user-email-info">
+                                        <h3><%= user.name %></h3>
+                                        <h5><%= user.email %></h5>
+                                    </div>
+                                </div>
+                                <div class="mange-area">
+                                    <a href="/account">View account</a>
+                                    <a href="/order">My orders</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else { %>
+                        <div class="user-wrapper" style="display: block;">
+                            <i class="fa-sharp fa-solid fa-user"
+                                id="userIcon"></i>
+                            <div class="login-mini">
+                                <h3>Not Logged In ?</h3>
+                                <a href="/signup">Create an account</a>
+                                <a href="/login">Login now</a>
+                            </div>
+                        </div>
+                        <% } %>
+                        <i class="fa-solid fa-bars" id="dropMenuBtn"></i>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- <div class="wishlist">
+        </div> -->
+
+        <div class="dropMenu">
+            <i class="fa-solid fa-x" id="closeMenu"></i>
+            <div class="nav-links-phones">
+                <div class="nav-logo">
+                    <a href="./"><h1
+                            class="fs-24 lh-24 black-color fw-700"
+                            style="letter-spacing: .72px;">XPECTED</h1>
+                    </a>
+                </div>
+                <a href="./" class="active">Home</a>
+                <a href="/contact">Contact</a>
+                <!-- <a href=".about/">About</a> -->
+                <a href="/signup">Sign Up</a>
+            </div>
+        </div>
+        <div class="dropMenuOverlay"></div>
+        <section class="slider-main">
+            <div class="container">
+                <div class="main-logo">
+                    <h2 class="stroker">XPECTED</h2>
+                    <h3 class="main-stroker">XPECTED</h3>
+                </div>
+                <div class="shop-now-btn">
+                    <button id="scrollBtn">Shop Now</buttonid>
+                </div>
+            </div>
+        </section>
+        <section class="flash-sales">
+            <div class="container mt swiper mySwiper swiper-container">
+                <div class="header w-fit d-flex align-center gap-10">
+                    <div class="before bg-primary-btn"></div>
+                    <h3
+                        class="fs-16 lh-20 primary-btn fw-600 p-relative w-fit">Today’s</h3>
+                </div>
+                <div class="sales-time d-flex align-center gap-20"
+                    style="flex-direction: column;">
+                    <h2 class="fs-36 lh-48 fw-600"
+                        style="letter-spacing: 1.44px;">Flash Sales</h2>
+                    <!-- <div class="countdown" id="countdown">
+                        <div class="item">
+                            <div class="label">Days</div>
+                            <span id="days">00</span>
+                        </div>
+                        <div class="separator">:</div>
+                        <div class="item">
+                            <div class="label">Hours</div>
+                            <span id="hours">00</span>
+                        </div>
+                        <div class="separator">:</div>
+                        <div class="item">
+                            <div class="label">Minutes</div>
+                            <span id="minutes">00</span>
+                        </div>
+                        <div class="separator">:</div>
+                        <div class="item">
+                            <div class="label">Seconds</div>
+                            <span id="seconds">00</span>
+                        </div>
+                    </div> -->
+                    <div class="slide-icons d-flex align-center gap-20">
+                        <i class="fa-solid fa-arrow-left swiper-button-prev"
+                            id="prevButton"></i>
+                        <i class="fa-solid fa-arrow-right swiper-button-next"
+                            id="nextButton"></i>
+                    </div>
+                </div>
+                <div class="slide-cards slider swiper-wrapper"
+                    id="slide-cards-container">
+                    <div class="card swiper-slide">
+                        <div class="image">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/1146087594367664238/1162195471893266492/rb0ihy5s2go.svg?ex=653b0de1&is=652898e1&hm=104c4ecb37f3f473184024a21e741c526086009402a8415f47c4863516462ee9&"
+                                alt>
+                            <div class="on-sale">
+                                <p class="w-fit">-40%</p>
+                                <div class="sale-icons">
+                                    <!-- <i class="fa-sharp fa-regular fa-heart"></i>-->
+                                    <i class="fa-sharp fa-solid fa-eye"></i>
+                                </div>
+                            </div>
+                            <div class="add-cart">Add
+                                To Cart <i class="fa-regular fa-cart-shopping"
+                                    style="color: #ffffff;"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>HAVIT HV-G92 Gamepad 1</h3>
+                            <h4>$120 <del>$160</del></h4>
+                            <p><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star unusedstar"></i>
+                                (88)</p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/1146087594367664238/1162195471893266492/rb0ihy5s2go.svg?ex=653b0de1&is=652898e1&hm=104c4ecb37f3f473184024a21e741c526086009402a8415f47c4863516462ee9&"
+                                alt>
+                            <div class="on-sale">
+                                <p class="w-fit">-40%</p>
+                                <div class="sale-icons">
+                                    <!-- <i class="fa-sharp fa-regular fa-heart"></i>-->
+                                    <i class="fa-sharp fa-solid fa-eye"></i>
+                                </div>
+                            </div>
+                            <div class="add-cart">Add
+                                To Cart <i class="fa-regular fa-cart-shopping"
+                                    style="color: #ffffff;"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>HAVIT HV-G92 Gamepad 2</h3>
+                            <h4>$120 <del>$160</del></h4>
+                            <p><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star unusedstar"></i>
+                                (88)</p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/1146087594367664238/1162195471893266492/rb0ihy5s2go.svg?ex=653b0de1&is=652898e1&hm=104c4ecb37f3f473184024a21e741c526086009402a8415f47c4863516462ee9&"
+                                alt>
+                            <div class="on-sale">
+                                <p class="w-fit">-40%</p>
+                                <div class="sale-icons">
+                                    <!--<i class="fa-sharp fa-regular fa-heart"></i>-->
+                                    <i class="fa-sharp fa-solid fa-eye"></i>
+                                </div>
+                            </div>
+                            <div class="add-cart">Add
+                                To Cart <i class="fa-regular fa-cart-shopping"
+                                    style="color: #ffffff;"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>HAVIT HV-G92 Gamepad 3</h3>
+                            <h4>$120 <del>$160</del></h4>
+                            <p><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star unusedstar"></i>
+                                (88)</p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/1146087594367664238/1162195471893266492/rb0ihy5s2go.svg?ex=653b0de1&is=652898e1&hm=104c4ecb37f3f473184024a21e741c526086009402a8415f47c4863516462ee9&"
+                                alt>
+                            <div class="on-sale">
+                                <p class="w-fit">-40%</p>
+                                <div class="sale-icons">
+                                    <!--<i class="fa-sharp fa-regular fa-heart"></i>-->
+                                    <i class="fa-sharp fa-solid fa-eye"></i>
+                                </div>
+                            </div>
+                            <div class="add-cart">Add
+                                To Cart <i class="fa-regular fa-cart-shopping"
+                                    style="color: #ffffff;"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>HAVIT HV-G92 Gamepad 4</h3>
+                            <h4>$120 <del>$160</del></h4>
+                            <p><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star unusedstar"></i>
+                                (88)</p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/1146087594367664238/1162195471893266492/rb0ihy5s2go.svg?ex=653b0de1&is=652898e1&hm=104c4ecb37f3f473184024a21e741c526086009402a8415f47c4863516462ee9&"
+                                alt>
+                            <div class="on-sale">
+                                <p class="w-fit">-40%</p>
+                                <div class="sale-icons">
+                                    <!--<i class="fa-sharp fa-regular fa-heart"></i>-->
+                                    <i class="fa-sharp fa-solid fa-eye"></i>
+                                </div>
+                            </div>
+                            <div class="add-cart">Add
+                                To Cart <i class="fa-regular fa-cart-shopping"
+                                    style="color: #ffffff;"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>HAVIT HV-G92 Gamepad 5</h3>
+                            <h4>$120 <del>$160</del></h4>
+                            <p><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star unusedstar"></i>
+                                (88)</p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/1146087594367664238/1162195471893266492/rb0ihy5s2go.svg?ex=653b0de1&is=652898e1&hm=104c4ecb37f3f473184024a21e741c526086009402a8415f47c4863516462ee9&"
+                                alt>
+                            <div class="on-sale">
+                                <p class="w-fit">-40%</p>
+                                <div class="sale-icons">
+                                    <!--<i class="fa-sharp fa-regular fa-heart"></i>-->
+                                    <i class="fa-sharp fa-solid fa-eye"></i>
+                                </div>
+                            </div>
+                            <div class="add-cart">Add
+                                To Cart <i class="fa-regular fa-cart-shopping"
+                                    style="color: #ffffff;"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>HAVIT HV-G92 Gamepad 6</h3>
+                            <h4>$120 <del>$160</del></h4>
+                            <p><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star unusedstar"></i>
+                                (88)</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="show-all">
+                    View All Products
+                </div>
+            </div>
+        </section>
+        <section class="flash-sales categories">
+            <div class="container mt-50">
+                <div class="header w-fit d-flex align-center gap-10">
+                    <div class="before bg-primary-btn"></div>
+                    <h3
+                        class="fs-16 lh-20 primary-btn fw-600 p-relative w-fit">Categories</h3>
+                </div>
+                <div class="sales-time d-flex align-center gap-50">
+                    <h2 class="fs-36 lh-48 fw-600"
+                        style="letter-spacing: 1.44px;">Browse By Category</h2>
+                    <!-- <div class="slide-icons d-flex align-center gap-20"
+                        style="margin-left: auto;">
+                        <i class="fa-solid fa-arrow-left" id="prevButton"></i>
+                        <i class="fa-solid fa-arrow-right" id="nextButton"></i>
+                    </div> -->
+                </div>
+                <div class="slide-products" id="slide-cards-container">
+                    <div class="product">
+                        <!-- <i class="fa-regular fa-shirt"></i> -->
+                        <svg height="800px" width="800px" version="1.1"
+                            id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 60.674 60.674" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path style="fill:#010002;"
+                                        d="M46.682,6.95c-0.675-0.675-1.813-1.147-2.768-1.147h-5.818c-0.134,0-1.318,0.04-1.516,1.438
+			c-0.02,0.14-0.05,0.351-0.121,0.56c-0.473,1.384-2.979,2.815-6.353,2.815s-5.88-1.432-6.353-2.815
+			c-0.408-1.194-1.446-1.997-2.584-1.997h-5.397c-0.627,0-0.627,0-6.953,6.322l-8.086,8.082C0.261,20.68,0.001,21.308,0,21.975
+			c0,0.669,0.259,1.297,0.732,1.77l7.714,7.716c0.944,0.945,2.59,0.945,3.536,0l2.289-2.29v23.2c0,1.379,1.122,2.5,2.5,2.5h26.854
+			c1.378,0,2.5-1.121,2.5-2.5V28.892l2.568,2.568c0.944,0.945,2.591,0.945,3.535,0l7.714-7.716c0.472-0.472,0.732-1.1,0.732-1.768
+			s-0.26-1.296-0.732-1.767L46.682,6.95z M10.214,28.985l-7.007-7.008c0.571-0.571,1.199-1.199,1.857-1.857l7.103,6.912
+			L10.214,28.985z M44.924,24.252c-0.894,0-1.799,0.692-1.799,2.018v25.601H17.271V26.548c0-1.325-0.905-2.017-1.799-2.017
+			c-0.367,0-0.919,0.115-1.469,0.664l-1.128,1.129l-7.103-6.911C9.87,15.316,14.91,10.28,16.39,8.805h4.536
+			c0.993,2.835,4.76,4.813,9.18,4.813s8.188-1.978,9.18-4.813h4.628c0.162,0.002,0.531,0.155,0.647,0.268l10.473,10.472
+			l-7.103,6.911l-1.538-1.54C45.844,24.367,45.291,24.252,44.924,24.252z M50.46,28.985l-1.823-1.823l7.104-6.912l1.727,1.727
+			L50.46,28.985z" />
+                                </g>
+                            </g>
+                        </svg>
+                        <p>T-Shirts</p>
+                    </div>
+                    <div class="product">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            version="1.1" width="1080" height="1080"
+                            viewBox="0 0 1080 1080" xml:space="preserve">
+                            <desc>Created with Fabric.js 5.2.4</desc>
+                            <defs>
+                            </defs>
+                            <rect x="0" y="0" width="100%" height="100%"
+                                fill="transparent"></rect>
+                            <g transform="matrix(1 0 0 1 540 540)"
+                                id="0989c823-9e7b-4399-8ad4-3d23d1f5ceea">
+                                <rect
+                                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;"
+                                    vector-effect="non-scaling-stroke" x="-540"
+                                    y="-540" rx="0" ry="0" width="1080"
+                                    height="1080" />
+                            </g>
+                            <g transform="matrix(1 0 0 1 540 540)"
+                                id="fc8b557c-b170-4806-b371-4ecfea085e97">
+                            </g>
+                            <g transform="matrix(11 0 0 11 540 465.47)">
+                                <path
+                                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                    vector-effect="non-scaling-stroke"
+                                    transform=" translate(-50, -50)"
+                                    d="M 92 29.969 L 92 18 C 92 16.896 91.104 16 90 16 L 10 16 C 8.896 16 8 16.896 8 18 L 8 29.969 L 6.002 79.92 C 5.958 81.01 6.795 81.933 7.883 81.996 L 41.883 83.996 C 42.650000000000006 84.038 43.398 83.62899999999999 43.765 82.94099999999999 L 50 71.25 L 56.235 82.941 C 56.584 83.596 57.265 84 58 84 C 58.039 84 58.078 83.999 58.117 83.996 L 92.11699999999999 81.996 C 93.20499999999998 81.93299999999999 94.04199999999999 81.00999999999999 93.99799999999999 79.92 L 92 29.969 z M 12 20 L 88 20 L 88 28 L 12 28 L 12 20 z M 40 51 L 40 32 L 60 32 L 60 51 C 60 56 55 60.535 50 60.535 L 50 60.5 C 44.486 60.5 40 56 40 51 z M 59.162 79.928 L 51.765 66.059 C 51.417 65.407 50.738 65 50 65 C 49.262 65 48.583 65.407 48.235 66.059 L 40.838 79.928 L 10.077000000000002 78.119 L 11.921 32 L 36 32 L 36 51 C 36 58 42.28 64.5 50 64.5 L 50 64.535 C 58 64.535 64 58 64 51 L 64 32 L 88.07900000000001 32 L 89.923 78.119 L 59.162 79.928 z"
+                                    stroke-linecap="round" />
+                            </g>
+                        </svg>
+                        <p>Boxers</p>
+                    </div>
+                    <div class="product">
+                        <!-- <i class="fa-regular fa-socks"></i> -->
+                        <svg fill="#000000" height="800px" width="800px"
+                            version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 512.301 512.301" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M381.79,51.2H211.123c-5.12,0-8.533,3.413-8.533,8.533v34.133c0,5.12,3.413,8.533,8.533,8.533H381.79
+			c5.12,0,8.533-3.413,8.533-8.533V59.733C390.323,54.613,386.91,51.2,381.79,51.2z M373.256,85.333h-153.6V68.267h153.6V85.333z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M400.563,238.933c-6.827-9.387-10.24-19.627-10.24-30.72V8.533c0-5.12-3.413-8.533-8.533-8.533H211.123
+			c-5.12,0-8.533,3.413-8.533,8.533v192.853c0,24.747-11.947,47.787-31.573,62.293L28.51,366.933
+			c-33.28,33.28-34.133,84.48-3.413,117.76c32.427,34.987,87.04,35.84,121.173,2.56l145.067-102.4
+			c11.093-7.68,24.747-11.947,39.253-11.947c6.827,0,13.653-0.853,19.627-2.56c34.987-8.533,60.587-38.4,64.853-73.387
+			C417.63,275.627,411.656,256,400.563,238.933z M398.856,294.4c-2.56,28.16-23.893,52.053-52.053,58.88
+			c-5.12,1.707-10.24,1.707-16.213,1.707c-18.773,0-35.84,5.12-49.493,15.36L136.03,473.6l-0.853,0.853
+			c-27.307,27.307-70.827,26.453-97.28-1.707c-24.747-26.453-23.893-67.413,0.853-93.013l142.507-102.4
+			c23.893-17.92,38.4-46.08,38.4-75.947V17.067h153.6v191.147c0,13.653,5.12,28.16,13.653,40.107
+			C396.296,261.973,400.563,278.187,398.856,294.4z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M245.256,0c-5.12,0-8.533,3.413-8.533,8.533V25.6c0,5.12,3.413,8.533,8.533,8.533s8.533-3.413,8.533-8.533V8.533
+			C253.79,3.413,250.376,0,245.256,0z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M279.39,0c-5.12,0-8.533,3.413-8.533,8.533V25.6c0,5.12,3.413,8.533,8.533,8.533s8.533-3.413,8.533-8.533V8.533
+			C287.923,3.413,284.51,0,279.39,0z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M313.523,0c-5.12,0-8.533,3.413-8.533,8.533V25.6c0,5.12,3.413,8.533,8.533,8.533s8.533-3.413,8.533-8.533V8.533
+			C322.056,3.413,318.643,0,313.523,0z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M400.563,238.08c-1.707-2.56-3.413-5.12-5.12-8.533c-0.853-1.707-2.56-3.413-5.12-4.267
+			c-8.533-2.56-17.067-4.267-25.6-4.267c-46.933,0.853-85.333,39.253-85.333,86.187c0,25.6,11.093,49.493,30.72,64.853
+			c1.707,1.707,4.267,2.56,6.827,1.707c5.12-0.853,9.387-1.707,13.653-1.707c6.827,0,13.653-0.853,19.627-2.56
+			c34.987-8.533,60.587-38.4,64.853-73.387C417.63,274.773,411.656,255.147,400.563,238.08z M398.856,294.4
+			c-2.56,28.16-23.893,52.053-52.053,58.88c-5.12,1.707-10.24,1.707-16.213,1.707c-4.267,0-8.533,0-12.8,0.853
+			c-13.653-11.947-21.333-29.867-21.333-48.64c0-37.547,30.72-68.267,68.267-68.267c5.973,0,11.947,0.853,17.067,2.56
+			c1.707,2.56,3.413,4.267,5.12,6.827C396.296,261.973,400.563,278.187,398.856,294.4z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M32.776,367.787c-2.56-0.853-5.12,0-6.827,1.707c-30.72,32.427-30.72,82.773-0.853,116.053
+			c29.867,31.573,79.36,35.84,113.493,9.387c1.707-1.707,3.413-3.413,3.413-5.973c0-3.413,0.853-6.827,0.853-10.24
+			C142.856,417.28,93.363,367.787,32.776,367.787z M125.79,482.987c-27.307,18.773-64.853,15.36-87.04-9.387
+			c-23.893-25.6-24.747-64-2.56-89.6c49.493,2.56,89.6,43.52,89.6,93.867C125.79,479.573,125.79,481.28,125.79,482.987z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M347.656,0c-5.12,0-8.533,3.413-8.533,8.533V25.6c0,5.12,3.413,8.533,8.533,8.533s8.533-3.413,8.533-8.533V8.533
+			C356.19,3.413,352.776,0,347.656,0z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M407.39,0c-5.12,0-8.533,3.413-8.533,8.533V25.6c0,5.12,3.413,8.533,8.533,8.533s8.533-3.413,8.533-8.533V8.533
+			C415.923,3.413,412.51,0,407.39,0z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M441.523,0c-5.12,0-8.533,3.413-8.533,8.533V25.6c0,5.12,3.413,8.533,8.533,8.533s8.533-3.413,8.533-8.533V8.533
+			C450.056,3.413,446.643,0,441.523,0z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M494.43,238.933c-6.827-9.387-10.24-19.627-10.24-30.72V8.533c0-5.12-3.413-8.533-8.533-8.533H381.79
+			c-5.12,0-8.533,3.413-8.533,8.533v199.68c0,13.653,5.12,28.16,13.653,40.107c9.387,13.653,13.653,29.867,11.947,46.08
+			c-2.56,28.16-23.893,52.053-52.053,58.88c-5.12,1.707-10.24,1.707-16.213,1.707c-17.92,0-35.84,5.12-49.493,15.36L136.03,473.6
+			l-0.853,0.853c-1.707,1.707-3.413,3.413-5.973,5.12c-4.267,3.413-4.267,10.24,0,13.653c33.28,26.453,81.067,23.893,111.787-5.973
+			l144.213-102.4c11.093-7.68,24.747-11.947,39.253-11.947c6.827,0,13.653-0.853,19.627-2.56
+			c34.987-8.533,60.587-38.4,64.853-73.387C511.496,275.627,505.523,256,494.43,238.933z M492.723,294.4
+			c-2.56,28.16-23.893,52.053-52.053,58.88c-5.12,1.707-10.24,1.707-16.213,1.707c-17.92,0-35.84,5.12-49.493,15.36L229.896,473.6
+			l-0.853,0.853c-22.187,22.187-54.613,26.453-80.213,11.947c-1.707-0.853,142.507-101.547,142.507-101.547
+			c11.093-7.68,24.747-11.947,39.253-11.947c6.827,0,13.653-0.853,19.627-2.56c34.987-8.533,60.587-38.4,64.853-73.387
+			c2.56-21.333-3.413-40.96-14.507-58.027c-6.827-9.387-10.24-19.627-10.24-30.72V17.067h76.8v191.147
+			c0,13.653,5.12,28.16,13.653,40.107C490.163,261.973,494.43,278.187,492.723,294.4z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M223.923,424.96c-2.56-4.267-8.533-5.973-12.8-2.56l-74.24,52.907l-1.707,0c-1.707,1.707-3.413,3.413-5.973,5.12
+			c-4.267,3.413-4.267,10.24,0,13.653c30.72,23.893,73.387,23.893,104.107,0.853c1.707-1.707,3.413-3.413,3.413-5.973
+			c0-3.413,0.853-6.827,0.853-10.24C237.576,459.947,232.456,441.173,223.923,424.96z M219.656,482.987
+			c-21.333,14.507-48.64,15.36-70.827,3.413c-2.56-1.707,63.147-45.227,63.147-45.227c5.12,11.093,7.68,23.893,7.68,36.693
+			C219.656,479.573,219.656,481.28,219.656,482.987z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M475.656,51.2H381.79c-5.12,0-8.533,3.413-8.533,8.533v34.133c0,4.267,3.413,8.533,8.533,8.533h93.867
+			c5.12,0,8.533-3.413,8.533-8.533V59.733C484.19,54.613,480.776,51.2,475.656,51.2z M467.123,85.333h-76.8V68.267h76.8V85.333z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path
+                                        d="M493.576,239.787c-0.853-3.413-2.56-5.973-4.267-9.387c-0.853-1.707-2.56-3.413-5.12-4.267
+			c-8.533-2.56-17.067-4.267-25.6-4.267c-24.747,0-47.787,11.093-64,28.16c-2.56,2.56-2.56,5.973-1.707,9.387
+			c5.12,11.093,6.827,22.187,5.12,34.133c-1.707,13.653-7.68,25.6-16.213,36.693c-2.56,2.56-2.56,5.973-1.707,9.387
+			c5.12,11.947,13.653,22.187,23.04,30.72c1.707,1.707,4.267,2.56,6.827,1.707c5.12-0.853,9.387-1.707,13.653-1.707
+			c6.827,0,13.653-0.853,19.627-2.56c34.987-8.533,60.587-37.547,64.853-71.68C510.643,275.627,504.669,256,493.576,239.787z
+			 M491.87,292.693c-2.56,27.307-23.893,50.347-52.053,57.173c-5.12,1.707-10.24,1.707-16.213,1.707c-4.267,0-8.533,0-12.8,0.853
+			c-4.267-4.267-9.387-10.24-12.8-17.067c9.387-11.947,15.36-26.453,17.067-41.813c1.707-12.8,0-25.6-4.267-37.547
+			c12.8-12.8,29.867-18.773,47.787-18.773c5.973,0,11.947,0.853,17.067,2.56c1.707,2.56,2.56,5.12,4.267,7.68
+			C489.31,261.12,493.576,276.48,491.87,292.693z" />
+                                </g>
+                            </g>
+                        </svg>
+                        <p>Socks</p>
+                    </div>
+
+                </div>
+            </section>
+            <section class="flash-sales">
+                <div class="container mt swiper-container">
+                    <div class="header w-fit d-flex align-center gap-10">
+                        <div class="before bg-primary-btn"></div>
+                        <h3
+                            class="fs-16 lh-20 primary-btn fw-600 p-relative w-fit">This
+                            Month</h3>
+                    </div>
+                    <div class="sales-time d-flex align-center gap-50">
+                        <h2 class="fs-36 lh-48 fw-600"
+                            style="letter-spacing: 1.44px;">Best Selling
+                            Products</h2>
+                    </div>
+                    <div class="slide-cards swiper-wrapper"
+                        id="slide-products-container">
+                        <div class="card swiper-slide" id="card-template">
+                            <div class="image" id="productimage">
+                                <img
+                                    src="https://cdn.discordapp.com/attachments/1146087594367664238/1161863611682148452/21zbbkhyt2k.svg?ex=6539d8cf&is=652763cf&hm=ca8e51713ccc1c464126baa932b9f4aebe301b57fc6ba7d36942a8dc01c0f322&"
+                                    alt>
+                                <div class="on-sale">
+                                    <div class="sale-icons">
+                                        <i class="fa-sharp fa-solid fa-eye"></i>
+                                    </div>
+                                </div>
+                                <div class="add-cart">Add
+                                    To Cart <i
+                                        class="fa-regular fa-cart-shopping"
+                                        style="color: #ffffff;"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>The north coat</h3>
+                                <h4>$260 <del>$360</del></h4>
+                                <p><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star unusedstar"></i>
+                                    (65)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="show-all">
+                        View All
+                    </div>
+                </div>
+            </section>
+            <section class="footer bg-color-2">
+                <div class="container ">
+                    <div class="footer-main d-flex">
+                        <div class="footery footer-1">
+                            <h3
+                                class="fs-24 fw-700 lh-24 text-color">XPECTED</h3>
+                            <h4
+                                class="fs-20 fw-500 lh-28 text-color">Subscribe</h4>
+                            <p class="fs-16 fw-400 lh-24 text-color"
+                                style="width: 206px;">Get 10% off
+                                your first
+                                order</p>
+                            <div class="box">
+                                <input type="email" name id
+                                    placeholder="Enter your email">
+                                <i class="fa-regular fa-paper-plane-top"></i>
+                            </div>
+                        </div>
+                        <div class="footery footer-2">
+                            <h3
+                                class="fs-20 fw-500 lh-28 text-color">Support</h3>
+                            <p class="fs-16 fw-400 lh-24 text-color">111 Bijoy
+                                sarani, Dhaka, DH 1515, Bangladesh.</p>
+                            <p
+                                class="fs-16 fw-400 lh-24 text-color">XPECTED@gmail.com</p>
+                            <p
+                                class="fs-16 fw-400 lh-24 text-color">+88015-88888-9999</p>
+                        </div>
+                        <div class="footery footer-3">
+                            <h3
+                                class="fs-20 fw-500 lh-28 text-color">Account</h3>
+                            <a href="/account">My Account</a>
+                            <a href="/login"
+                                style="max-width: 125px; width: 125px;">Login /
+                                Register</a>
+                            <a href="/cart">Cart</a>
+                            <a href="/order">My Orders</a>
+                            <a href="./">Shop</a>
+                        </div>
+                        <!-- <div class="footery footer-4">
+                            <h3 class="fs-20 fw-500 lh-28 text-color">Quick
+                                Link</h3>
+                            <a href>Privacy Policy</a>
+                            <a href>Terms of Use</a>
+                            <a href>FAQ</a>
+                            <a href>Contact</a>
+                        </div>
+                        <div class="footery footer-5">
+                            <h3 class="fs-20 fw-500 lh-28 text-color">Donwload
+                                App</h3>
+                            <div class="footer-5-box">
+                                <p class="fs-12 fw-500 lh-18 text-color"
+                                    style="opacity: 0.7; margin-bottom: 8px;">Save
+                                    $3
+                                    with App New User
+                                    Only</p>
+                                <div class="footer-box-inside">
+                                    <img
+                                        src="https://cdn.discordapp.com/attachments/1146087594367664238/1163187024124198932/epjigsb3sok.svg?ex=653ea955&is=652c3455&hm=291a4d1c2666d6024c8d23f435688fb922a1ec5c50399133f37c60302599dcb4&"
+                                        alt>
+                                    <img
+                                        src="https://cdn.discordapp.com/attachments/1146087594367664238/1163187158153183312/hz5yq0ocg2p.svg?ex=653ea975&is=652c3475&hm=146b5df436bd26b83d5c0fea1510edcf9124e18a7a45e2f46352dbf530fa3711&"
+                                        alt>
+                                    <img
+                                        src="https://cdn.discordapp.com/attachments/1146087594367664238/1163187282585600184/jhtshauv5aw.svg?ex=653ea993&is=652c3493&hm=4e9cab08bec43f5b7a5de95cb0ee0b20ab99d133c0e35d2cac7e7e166bc4b6f9&"
+                                        alt>
+                                </div>
+                            </div>
+                            <div class="footer-5-icons">
+                                <i class="fa-brands fa-facebook"
+                                    style="color: #ffffff;"></i>
+                                <i class="fa-brands fa-twitter"
+                                    style="color: #ffffff;"></i>
+                                <i class="fa-brands fa-instagram"
+                                    style="color: #ffffff;"></i>
+                                <i class="fa-brands fa-linkedin"
+                                    style="color: #ffffff;"></i>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="footer-cr"><p class="w-fit"
+                            style="margin-inline:auto;">Copyright All-Father
+                            2023. All right
+                            reserved</p></div>
+                </div>
+            </section>
+            <!-- ======================================================== -->
+            <!-- Swiper JS -->
+            <script type="text/javascript"
+                src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <script
+                src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script src="src/js/script.js"></script>
+
+            <script src="src/js/main.js"></script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                crossorigin="anonymous"></script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+                integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+                crossorigin="anonymous"></script>
+        </body>
+    </html>

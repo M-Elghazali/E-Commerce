@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XPECTED | Login</title>
+        <link rel="shortcut icon" href="../src/imgs/5581171.png"
+            type="image/x-icon">
+        <!-- Font Awe Some -->
+        <!-- Add the slick-theme.css if you want default styling -->
+        <link rel="stylesheet" type="text/css"
+            href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <!-- Add the slick-theme.css if you want default styling -->
+        <link rel="stylesheet" type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+        <link rel="stylesheet" type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="../src/v6.5.1/css/all.css">
+        <link rel="stylesheet" href="../src/v6.5.1/css/sharp-light.css">
+        <link rel="stylesheet" href="../src/v6.5.1/css/sharp-regular.css">
+        <link rel="stylesheet" href="../src/v6.5.1/css/sharp-solid.css">
+        <!-- <link rel="stylesheet" href="src/v6.5.1/css/sharp-thin.css"> -->
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <!-- Main Files -->
+
+        <link rel="stylesheet" href="../src/css/normalize.css">
+        <link rel="stylesheet" href="../src/css/framework.css">
+        <link rel="stylesheet" href="../src/css/styles.css">
+        <!-- ------------- -->
+
+    </head>
+    <body>
+        <section class="event bg-color-2">
+            <div class="container d-flex-center">
+                <p class="fs-14 lh-21 text-color fw-400 text-center">Summer Sale
+                    For All
+                    Swim Suits And Free Express Delivery - OFF 50%! <a href="#"
+                        class="fw-600 lh-24 text-color">ShopNow</a></p>
+                <p class="fs-14 lh-21 text-color fw-400 d-flex-center ">English
+                    <i
+                        class="fa-solid fa-angle-down"></i></p>
+            </div>
+        </section>
+        <section class="navbar" id="navbar">
+            <div class="wrapper d-flex justify-between align-center">
+                <div class="nav-logo">
+                    <a href="../"><h1
+                            class="fs-24 lh-24 black-color fw-700"
+                            style="letter-spacing: .72px;">XPECTED</h1>
+                    </a>
+                </div>
+                <div class="nav-links d-flex align-center gap-30 ">
+                    <a href="../">Home</a>
+                    <a href="/contact">Contact</a>
+                    <!-- <a href="../about/">About</a> -->
+                    <a href="/signup" class="active">Sign Up</a>
+                </div>
+                <div class="nav-last d-flex align-center gap-20">
+                    <div class="nav-search d-flex align-center justify-center
+                gap-5">
+                        <input type="text"
+                            placeholder="What are you looking for?">
+                        <i
+                            class="fa-solid fa-regular fa-magnifying-glass pointer"></i>
+                    </div>
+                    <div class="nav-icons d-flex gap-20">
+                        <!-- <i class="fa-sharp fa-solid fa-heart"></i> -->
+
+                        <a href="/cart" style="color:#000"><i
+                                class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                        <% if (loggedIn) { %>
+
+                        <div class="logged-wrapper" style="display: block;">
+                            <h3>My Account</h3>
+                            <div class="logged-mini">
+                                <a href="/logout">Logout</a>
+                                <div class="logged-info">
+                                    <div class="user-img">
+                                        <img src="src/imgs/user.png" alt>
+                                    </div>
+                                    <div class="user-email-info">
+                                        <h3><%= user.name %></h3>
+                                        <h5><%= user.email %></h5>
+                                    </div>
+                                </div>
+                                <div class="mange-area">
+                                    <a href="/account">View account</a>
+                                    <a href="/order">My orders</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else { %>
+                        <div class="user-wrapper" style="display: block;">
+                            <i class="fa-sharp fa-solid fa-user"
+                                id="userIcon"></i>
+                            <div class="login-mini">
+                                <h3>Not Logged In ?</h3>
+                                <a href="/signup">Create an account</a>
+                                <a href="/login">Login now</a>
+                            </div>
+                        </div>
+
+                        <% } %>
+                        <i class="fa-solid fa-bars" id="dropMenuBtn"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="dropMenu">
+            <i class="fa-solid fa-x" id="closeMenu"></i>
+            <div class="nav-links-phones">
+                <div class="nav-logo">
+                    <a href="./"><h1
+                            class="fs-24 lh-24 black-color fw-700"
+                            style="letter-spacing: .72px;">XPECTED</h1>
+                    </a>
+                </div>
+                <a href="../" class="active">Home</a>
+                <a href="/contact">Contact</a>
+                <!-- <a href="../about/">About</a> -->
+                <a href="/signup">Sign Up</a>
+            </div>
+        </div>
+        <div class="dropMenuOverlay"></div>
+        <section class="sign-up">
+            <div class="container mt-50">
+                <div class="sign-up-right">
+                    <h2>XPECTED</h2>
+                    <h4>Welcome Back !!</h4>
+                    <h3>Sign In</h3>
+                    <% if (messages.error) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= messages.error %>
+                    </div>
+                    <% } %>
+                    <form action="/login" method="POST">
+                        <input type="email" name="email" id
+                            placeholder="Email address" required>
+                        <input type="password" name="password" id
+                            placeholder="Password" required>
+                        <div
+                            class="log-btn d-flex align-center justify-between">
+                            <!-- <input type="submit" value="Submit" id="submit" /> -->
+                            <button type="submit" id="submit">Sign In</button>
+                            <a href="#" class="primary-btn">Forget Password?</a>
+                        </div>
+                        <!-- <a href="#"><img
+                                src="https://cdn.discordapp.com/attachments/1146087594367664238/1163312767177076798/u505lwxmd4g.svg?ex=653f1e71&is=652ca971&hm=8545648af245fe230b94b606d02067c850a7977bd94f4c2ee975c2729219e9e2&"
+                                alt> <p>Log in with Google</p></a> -->
+                        <p>Don't have an Account? <a href="/signup">Sign
+                                up</a></p>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="footer bg-color-2">
+            <div class="container ">
+                <div class="footer-main d-flex">
+                    <div class="footery footer-1">
+                        <h3 class="fs-24 fw-700 lh-24 text-color">XPECTED</h3>
+                        <h4 class="fs-20 fw-500 lh-28 text-color">Subscribe</h4>
+                        <p class="fs-16 fw-400 lh-24 text-color"
+                            style="width: 206px;">Get 10% off
+                            your first
+                            order</p>
+                        <div class="box">
+                            <input type="email" name id
+                                placeholder="Enter your email">
+                            <i class="fa-regular fa-paper-plane-top"></i>
+                        </div>
+                    </div>
+                    <div class="footery footer-2">
+                        <h3 class="fs-20 fw-500 lh-28 text-color">Support</h3>
+                        <p class="fs-16 fw-400 lh-24 text-color">111 Bijoy
+                            sarani, Dhaka, DH 1515, Bangladesh.</p>
+                        <p
+                            class="fs-16 fw-400 lh-24 text-color">XPECTED@gmail.com</p>
+                        <p
+                            class="fs-16 fw-400 lh-24 text-color">+88015-88888-9999</p>
+                    </div>
+                    <div class="footery footer-3">
+                        <h3 class="fs-20 fw-500 lh-28 text-color">Account</h3>
+                        <a href="/account">My Account</a>
+                        <a href="/login"
+                            style="max-width: 125px; width: 125px;">Login /
+                            Register</a>
+                        <a href="/checkout">Cart</a>
+                        <a href="/order">My Orders</a>
+                        <a href="../">Shop</a>
+                    </div>
+
+                </div>
+                <div class="footer-cr"><p class="w-fit"
+                        style="margin-inline:auto;">Copyright All-Father
+                        2023. All right
+                        reserved</p></div>
+            </div>
+        </section>
+        <!-- ======================================================== -->
+        <script src="../src/js/script.js"></script>
+        <!-- Swiper JS -->
+        <script type="text/javascript"
+            src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                slidesToShow: 4, // عدد الصور التي تظهر في كل مرة
+                slidesToScroll: 1, // عدد الصور التي تتمرر بكل مرة
+                autoplay: true, // تشغيل التمرير التلقائي
+                autoplaySpeed: 2000, // سرعة التمرير التلقائي بالميلي ثانية
+                infinite: true, // السماح بالتكرار اللامنتهي
+            });
+        });
+    </script>
+        <script src="../src/js/main.js"></script>
+    </body>
+</html>
